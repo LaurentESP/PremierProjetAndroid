@@ -4,7 +4,7 @@ package laurentesp.test;
  * Created by SOEOSSA on 26/09/2016.
  */
 
-public class Rectangle extends Shape{
+public class Rectangle extends Shape implements Zoomx2{
     protected int height;
     protected int width;
 
@@ -24,5 +24,11 @@ public class Rectangle extends Shape{
 
     public void computeArea(){
       area = width*height;
+    }
+
+    @Override
+    public void zoomx2() {
+        width *=2;
+        height *=2;
     }
 }

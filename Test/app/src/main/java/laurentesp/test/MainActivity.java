@@ -1,5 +1,6 @@
 package laurentesp.test;
 
+import android.graphics.Rect;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -103,6 +104,15 @@ public class MainActivity extends AppCompatActivity {
         Square monCarre = new Square(5);
         TextView textView15 = (TextView) findViewById(R.id.text15);
         textView15.setText("Mon carre a une superficie de " + monCarre.getArea());
+
+        Rectangle monRec = new Rectangle(5,4);
+        TextView textView16 = (TextView) findViewById(R.id.text16);
+        textView16.setText("Mon rectangle a une superficie de " + monRec.getArea());
+
+        monCarre.zoomx2();
+        monCarre.computeArea();
+        TextView textView17 = (TextView) findViewById(R.id.text17);
+        textView17.setText("Mon carre a une nouvelle superficie de " + monCarre.getArea());
     }
 
     private String envers(String mot) {

@@ -87,5 +87,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello world!" />
-
+    <TextView
+        android:id="@+id/text16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello world!" />
+    <TextView
+        android:id="@+id/text17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello world!" />
 </LinearLayout>
