@@ -12,6 +12,7 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.io.IOException;
 import java.lang.Math;
 import java.util.ArrayList;
 import java.util.Date;
@@ -88,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
         }
         textView10.setText(cleHasmap);
 
-        Intervalle i1 = new Intervalle(0,10);
-        Intervalle i2 = new Intervalle(5,25);
+        Intervalle i1 = new Intervalle(0,5);
+        Intervalle i2 = new Intervalle(10,25);
 
         TextView textView11 = (TextView) findViewById(R.id.text11);
         TextView textView12 = (TextView) findViewById(R.id.text12);
@@ -97,8 +98,14 @@ public class MainActivity extends AppCompatActivity {
         TextView textView14 = (TextView) findViewById(R.id.text14);
         textView11.setText("i1 =" + i1);
         textView12.setText("i2 =" + i2);
-        textView13.setText("i1.intersection(i2) =" + i1.intersection(i2));
-        textView14.setText("i1.union(i2) =" + i1.union(i2));
+        try {
+            textView13.setText("i1.intersection(i2) =" + i1.intersection(i2));
+            textView14.setText("i1.union(i2) =" + i1.union(i2));
+        } catch (IllegalArgumentException e){
+            textView13.setText("Intervalles disjoints : " + i1 + " et "+ i2);
+            textView14.setText("Intervalles disjoints : " + i1 + " et "+ i2);
+        }
+
 
 
         Square monCarre = new Square(5);

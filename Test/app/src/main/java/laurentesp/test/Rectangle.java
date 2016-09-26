@@ -31,4 +31,5 @@ public class Rectangle extends Shape implements Zoomx2{
         width *=2;
         height *=2;
     }
+
 }

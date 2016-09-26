@@ -61,25 +61,23 @@ public class Intervalle {
         return !(this.estDisjointDe(i));
     }
 
-    public Intervalle intersection(Intervalle i) {
+    public Intervalle intersection(Intervalle i) throws IllegalArgumentException {
         if (this.intersecte(i)) {
-            Intervalle intervInter = new Intervalle(0,1);
-            intervInter.inf = max(inf,i.getBorneInf());
-            intervInter.sup = min(sup,i.getBorneSup());
-            return intervInter;
+            int borneInf  = max(inf,i.getBorneInf());
+            int borneSup  = min(sup,i.getBorneSup());
+            return new Intervalle(borneInf,borneSup);
         } else {
-            return null;
+            throw new IllegalArgumentException("Intervalles disjoints : " + this + " et "+ i);
         }
     }
 
-    public Intervalle union(Intervalle i) {
+    public Intervalle union(Intervalle i) throws IllegalArgumentException {
         if (this.intersecte(i)) {
-            Intervalle intervUnion = new Intervalle(0,1);
-            intervUnion.inf= min(inf,i.getBorneInf());
-            intervUnion.sup= max(sup,i.getBorneSup());
-            return intervUnion;
+            int borneInf = min(inf,i.getBorneInf());
+            int borneSup= max(sup,i.getBorneSup());
+            return new Intervalle(borneInf,borneSup);
         } else {
-            return null;
+            throw new IllegalArgumentException("Intervalles disjoints : " + this + " et "+ i);
         }
     }
 
