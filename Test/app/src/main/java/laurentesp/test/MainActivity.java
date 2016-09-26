@@ -98,6 +98,11 @@ public class MainActivity extends AppCompatActivity {
         textView12.setText("i2 =" + i2);
         textView13.setText("i1.intersection(i2) =" + i1.intersection(i2));
         textView14.setText("i1.union(i2) =" + i1.union(i2));
+
+
+        Square monCarre = new Square(5);
+        TextView textView15 = (TextView) findViewById(R.id.text15);
+        textView15.setText("Mon carre a une superficie de " + monCarre.getArea());
     }
 
     private String envers(String mot) {
