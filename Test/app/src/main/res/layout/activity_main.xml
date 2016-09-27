@@ -97,4 +97,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello world!" />
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter"/>
+    <TextView
+        android:id="@+id/text18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello world!" />
 </LinearLayout>

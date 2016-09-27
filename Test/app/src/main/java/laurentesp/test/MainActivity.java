@@ -1,10 +1,14 @@
 package laurentesp.test;
 
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
@@ -32,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         String stringEnvers = envers(nouvelString);
 
 
-        TextView textView = (TextView) findViewById(R.id.text);
+        final TextView textView = (TextView) findViewById(R.id.text);
         textView.setText(nouvelString);
         //textView.setText("Bonjour!");
 
@@ -121,6 +125,26 @@ public class MainActivity extends AppCompatActivity {
         monCarre.computeArea();
         TextView textView17 = (TextView) findViewById(R.id.text17);
         textView17.setText("Mon carre a une nouvelle superficie de " + monCarre.getArea());
+
+        final EditText editText = (EditText) findViewById(R.id.edit_text);
+        final TextView textView18 = (TextView) findViewById(R.id.text18);
+
+        Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String myString = editText.getText().toString();
+                if (isPalindrome(myString)){
+                    textView18.setText(envers(myString));
+                    textView18.setBackgroundColor(Color.GREEN);
+                } else {
+                    textView18.setText(myString);
+                    textView18.setBackgroundColor(Color.RED);
+                }
+                //textView18.setText(myString);
+            }
+        });
+
     }
 
     private String envers(String mot) {
