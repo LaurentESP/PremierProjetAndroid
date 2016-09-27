@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
             textView13.setText("i1.intersection(i2) =" + i1.intersection(i2));
             textView14.setText("i1.union(i2) =" + i1.union(i2));
         } catch (IllegalArgumentException e){
+            Log.e("Intervalles disjoints",e.getMessage(),e);
             textView13.setText("Intervalles disjoints : " + i1 + " et "+ i2);
             textView14.setText("Intervalles disjoints : " + i1 + " et "+ i2);
         }
